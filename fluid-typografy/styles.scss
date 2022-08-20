@@ -1,0 +1,62 @@
+// 1. some resets
+// :root {
+//     // description
+//     --type-ratio: 1.333;
+// }
+
+
+body {
+    line-height: 1.5;
+}
+
+body * {
+    margin: 0;
+    padding: 0;
+}
+
+p, li, h1, h2, h3, h4 {
+    // Help prevent overflow of long words/names/URLs
+    overflow-wrap: break-word;
+    // Optional, not supported for all languages
+    hyphens: auto;
+}
+
+// Ratio-type stuff
+
+$type-ratios: (
+  "minorSecond": 1.067,
+  "majorSecond": 1.125,
+  "minorThird": 1.2,
+  "majorThird": 1.25,
+  "perfectFourth": 1.333,
+  "augmentedFourth": 1.414,
+  "perfectFifth": 1.5,
+  "goldenRatio": 1.618,
+);
+
+$type-base-size: 1rem;
+$type-size-ratio: 1.333;
+$type-levels: 4, 3, 2, 1;
+$level-size: $type-base-size;
+
+@each $level in $type-levels {
+    $level-size: $level-size * $type-size-ratio;
+    h#{$level} {
+        font-size: $level-size;
+        line-height: calc(2px + 2ex + 2px); /*1ex = hight of a lowercase letter like x*/
+        margin-bottom: 0.65em;
+        // Fluid typography stuff starts here
+        //remove the unit
+        $level-unitless: $level-size / ($level-size * 0 + 1);
+        $fluid-reduction: if($level-size > 4, 0.5, 0.33);
+        $fluid-min: $level-unitless - ($fluid-reduction * $level-unitless);
+        $fluid-min: if($fluid-min > 1, $fluid-min, 1);
+        $fluid-scaler: ($level-unitless - $fluid-min) + 4vw;
+        
+        font-size: clamp(
+                #{$fluid-min}rem,
+                #{$fluid-scaler} + 1rem,
+                #{$level-size}
+              );
+    }
+}
