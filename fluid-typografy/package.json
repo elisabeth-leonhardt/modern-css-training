@@ -1,0 +1,19 @@
+{
+  "name": "fluid-typografy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elisabeth-leonhardt/modern-css-training.git"
+  },
+  "author": "Elisabeth Leonhardt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elisabeth-leonhardt/modern-css-training/issues"
+  },
+  "homepage": "https://github.com/elisabeth-leonhardt/modern-css-training#readme"
+}
