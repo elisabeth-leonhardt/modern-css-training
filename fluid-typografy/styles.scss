@@ -46,6 +46,8 @@ $level-size: $type-base-size;
         line-height: calc(2px + 2ex + 2px); /*1ex = hight of a lowercase letter like x*/
         margin-bottom: 0.65em;
         // Fluid typography stuff starts here
+
+        // fluid is not needed for values below and equal to 1.2
         //remove the unit
         $level-unitless: $level-size / ($level-size * 0 + 1);
         $fluid-reduction: if($level-size > 4, 0.5, 0.33);

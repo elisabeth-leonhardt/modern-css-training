@@ -1,5 +1,5 @@
 {
-  "name": "fluid-typografy",
+  "name": "fluid-typografy-course-exercises",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,12 +15,5 @@
   "bugs": {
     "url": "https://github.com/elisabeth-leonhardt/modern-css-training/issues"
   },
-  "homepage": "https://github.com/elisabeth-leonhardt/modern-css-training#readme",
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.7.0",
-    "parcel": "^2.7.0"
-  },
-  "dependencies": {
-    "sass": "^1.54.5"
-  }
+  "homepage": "https://github.com/elisabeth-leonhardt/modern-css-training#readme"
 }
