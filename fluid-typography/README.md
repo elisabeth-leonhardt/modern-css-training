@@ -1,7 +1,13 @@
-resources I used to create this class:
+# Class 1 Part 2: Fluid Typography
 
-https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/
-https://www.rawkblog.com/2018/05/modular-scale-typography-with-css-variables-and-sass/
+Install the project dependencies with
+`npm install`
 
+This project is built with parcel. To run it with hot reload, execute `npm run start`
 
-run the project with npx parcel index.html
+You will be able to see the project at `localhost:1234` in your browser
+
+## Resources I used to create this class:
+
+[Stephanie Eckles excellent article on fluid typography](https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/)  
+[Introduction to Sass](https://egghead.io/courses/learn-the-fundamentals-of-css-and-sass-to-create-modern-and-responsive-layouts-f341)
