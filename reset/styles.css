@@ -1,0 +1,82 @@
+:root {
+    --main-bg: #292929;
+    --main-text-color: #efefef;
+    --main-green: #67f293;
+}
+
+html {
+    background-color: var(--main-bg);
+    color: var(--main-text-color);
+    font-family: Plain,sans-serif
+}
+
+body {
+    padding: 2rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+header h1 img {
+    display: inline
+}
+
+.first-container {
+    height: 150vh;
+    border: 3px solid var(--main-green);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cat-container {
+    border: 3px solid var(--main-green);
+    display: block;
+}
+.cat-container img {
+    margin: auto;
+    padding-block: 2rem;
+    margin-bottom: 2rem;
+}
+
+.button-container {
+    height: 50vh;
+    border: 3px solid var(--main-green);
+    margin-block: 2rem;
+}
+.button-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.button {
+   border: none;
+   border-radius: 5px;
+   color: var(--main-bg);
+   padding: 10px 15px; 
+   background: var(--main-green);
+   min-width: 150px;
+   display: inline-block;
+}
+
+:focus {
+    outline: 3px dotted var(--main-green) !important;
+    outline-offset: 2px;
+}
