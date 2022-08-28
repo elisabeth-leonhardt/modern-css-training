@@ -1,0 +1,62 @@
+:root {
+    --dark-bg: #292929;
+    --light-primary: #ffffff;
+    --light-secondary: #67f293;
+    --another-property: 'palabras en español'
+}
+
+html {
+    background: var(--dark-bg);
+    font-family: Plain, sans-serif;
+}
+
+* {
+    margin: 0;
+}
+
+.section-1, .section-2 {
+    color: var(--light-primary);
+}
+
+.section-2 button {
+    border: none;
+    background: var(--light-secondary);
+    padding: .8rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.section-3 {
+    /* overwrite light secondary aca y ver que pasa */
+    color: var(--light-secondary);
+}
+
+.section-4 {
+    color: var(--dark-secondary);
+}
+
+.special-color {
+    --dark-secondary: purple;
+}
+
+/* default value */
+.section-5 {
+    color: var(--new-great-color, red);
+}
+
+.main-container {
+    --max-width: 60rem;
+    --margin: 4rem;
+
+    width: min(calc(100% - var(--margin)), var(--max-width));
+    border: 1px solid red;
+    margin: auto;
+}
+
+.wide {
+    --max-width: 80rem;
+}
+
+.narrow {
+    --max-width: 20rem;
+}
