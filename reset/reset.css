@@ -28,6 +28,7 @@ dd {
 /* Avoid text overflows */
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
