@@ -1,0 +1,54 @@
+/* :is and :where */
+
+h1 > b,
+h2 > b,
+h3 > dkdkdk,
+h4 > b,
+h5 > b,
+h6 > b {
+  color: hotpink;
+}
+
+/*can be written as: */
+
+:where(h1, h2, h3, h4, h5, h6) > b {
+  color: hotpink;
+}
+
+/*or also written as*/
+
+:is(h1, h2, h3, h4, h5, h6, #mi-id, .mi-clase) > b {
+  color: hotpink;
+}
+
+
+
+/* it is forgiving!!*/
+:where(h1, #my-element, .doesntExist) {
+  color: hotpink; /* works*/
+}
+
+
+/* Exercise: use is or where to rewrite the following CSS and calculate specificity*/
+
+/* 1. */
+p > a,
+span > a,
+.text > a {
+    text-decoration: underline;
+}
+
+
+/* 2.  */
+article header > p,
+article footer > p {
+    color: green;
+}
+
+/* 3.  */
+h1 .hero,
+h1 .subtitle,
+h2 .hero,
+h2 .subtitle {
+    text-transform: uppercase;
+}
