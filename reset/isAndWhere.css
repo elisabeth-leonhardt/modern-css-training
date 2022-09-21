@@ -24,7 +24,7 @@ h6 > b {
 
 
 /* it is forgiving!!*/
-:where(h1, #my-element, .doesntExist) {
+:where(h1, #my-element, .doesntExist) { /*(0, 0, 0)*/
   color: hotpink; /* works*/
 }
 
@@ -38,6 +38,10 @@ span > a,
     text-decoration: underline;
 }
 
+/* 1. solution */
+:is(p, span, #text) > a { /*(1, 0, 0)*/
+  text-decoration: underline;
+}
 
 /* 2.  */
 article header > p,
@@ -45,10 +49,21 @@ article footer > p {
     color: green;
 }
 
+/* 2. solution */
+article :is(header, footer) > p {
+  color: green;
+}
+
+
 /* 3.  */
 h1 .hero,
 h1 .subtitle,
 h2 .hero,
 h2 .subtitle {
     text-transform: uppercase;
+}
+
+/* 3. solution */
+:is(h1, h2) :where(.hero, .subtitle){
+  text-transform: uppercase;
 }
