@@ -10,4 +10,5 @@ You will be able to see the project at `localhost:1234` in your browser
 ## Resources I used to create this class:
 
 [Josh Comeau's CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)  
-[The Experience from Stephanie Eckles CSS Workshop](https://smashingconf.com/online-workshops/workshops/modern-css-stephanie-eckles) 
+[The Experience from Stephanie Eckles CSS Workshop](https://smashingconf.com/online-workshops/workshops/modern-css-stephanie-eckles)  
+[Excellent article about :is and :where with great examples](https://web.dev/css-is-and-where/)
