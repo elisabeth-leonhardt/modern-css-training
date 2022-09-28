@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtle Exercise!!</title>
+</head>
+<body>
+    <style>
+        .turtle {
+            position: relative;
+            transform: translateX(10px) translateY(10px);
+            transition: transform 0.2s;
+        }
+    </style>
+    <img src="assets/turtle.png" alt="turtle" width="200" class="turtle">
+    
+</body>
+
+<script>
+    // exercise: make the turtle move with the arrow-keys and custom properties
+    const turtle = document.querySelector('.turtle');
+    turtle.style.background = 'red';
+    turtle.style.border = '5px solid green'
+    const x = 500;
+    turtle.setAttribute('style', `--x: ${x}px`);
+</script>
+</html>
