@@ -1,0 +1,141 @@
+/* some basic styles, dont worry about this */
+
+.wide {
+    --max-width: 80rem;
+}
+
+.narrow {
+    --max-width: 20rem;
+}
+
+b {
+    text-decoration: underline;
+}
+
+section {
+    padding: 2rem;
+}
+
+html {
+    background: var(--dark-bg);
+    font-family: Plain, sans-serif;
+}
+
+* {
+    margin: 0;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-areas: "a";
+    height: 50vh;
+    width: 100%;
+    place-items: center;
+    margin-block: 4rem;
+}
+
+.card-wrapper {
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bg-image {
+    grid-area: a;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+/* custom property stuff starts here */
+
+:root {
+    --dark-bg: #292929;
+    --light-primary: white;
+    --light-secondary: #67f293;
+    --dark-secondary: #198754;
+    --another-property: 'palabras en español';
+
+}
+
+
+/* 1. we can just use the custom properties in our CSS */
+.section-1, .section-2 {
+    color: var(--light-primary);
+}
+
+/* 2. overwrite light secondary, check that color is applied based on specificity */
+.section-3 {
+    color: var(--light-secondary);
+}
+#special-section {
+    /* --light-secondary: purple; */
+}
+
+/* 3. we can use a variable before we declared it and put a default value onto it, also overwrite styles from the html */
+.section-4 {
+    color: var(--new-cool-color);
+}
+
+.special-color {
+    --new-cool-color: goldenrod;
+}
+
+/* default value without never defining --another-great-color */
+.section-5 {
+    color: var(--another-great-color, red);
+}
+
+/* Exercise 1: create different button styles */
+
+button{
+    border: none;
+    display: inline-block;
+    padding: .8rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+
+    background: var(--button-primary-bg, white);
+    color: var(--button-primary-text, black)
+}
+
+button:hover {
+    background: var(--button-hover-bg, black);
+    color: var(--button-hover-flex, white);
+}
+
+/* create variations here: */
+button.primary {
+
+}
+button.primary:hover {
+
+}
+
+button.secondary {
+
+}
+button.secondary:hover {
+
+}
+
+/* Exercise 2: make code more readable, create a narrow and wide container */
+
+.main-container {
+    width: min(100% - 2rem, 60rem);
+    margin: auto;
+}
+
+/* Ejercise 3: hsl and custom properties*/ 
+
+.card {
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem;
+    /* hue, saturation, lightness, opacity (alpha) */
+    background: hsl(240, 80%, 60%, 0.8);
+    z-index: 1;
+}
