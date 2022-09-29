@@ -1,0 +1,163 @@
+/* some basic styles, dont worry about this */
+
+.wide {
+    --max-width: 80rem;
+}
+
+.narrow {
+    --max-width: 20rem;
+}
+
+b {
+    text-decoration: underline;
+}
+
+section {
+    padding: 2rem;
+}
+
+html {
+    background: var(--dark-bg);
+    font-family: Plain, sans-serif;
+}
+
+* {
+    margin: 0;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-areas: "a";
+    height: 50vh;
+    width: 100%;
+    place-items: center;
+    margin-block: 4rem;
+}
+
+.card-wrapper {
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bg-image {
+    grid-area: a;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+/* custom property stuff starts here */
+
+:root {
+    --dark-bg: #292929;
+    --light-primary: #ffffff;
+    --light-secondary: #67f293;
+    --dark-secondary: #198754;
+    --another-property: 'palabras en español';
+
+}
+
+
+/* 1. we can just use the custom properties in our CSS */
+.section-1, .section-2 {
+    color: var(--light-primary);
+}
+
+/* 2. overwrite light secondary, check that color is applied based on specificity */
+.section-3 {
+    --light-secondary: green; 
+    color: var(--light-secondary);
+}
+#special-section {
+    /* --light-secondary: purple; */
+}
+
+/* 3. we can use a variable before we declared it and put a default value onto it, also overwrite styles from the html */
+.section-4 {
+    color: var(--new-cool-color);
+}
+
+.special-color {
+    --new-cool-color: goldenrod;
+}
+
+/* default value without never defining --new-great-color */
+.section-5 {
+    color: var(--new-great-color, red);
+}
+
+/* Exercise 1: create different button styles */
+
+button{
+    border: none;
+    display: inline-block;
+    padding: .8rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+
+    background: var(--button-primary-bg, white);
+    color: var(--button-primary-text, black)
+}
+
+button:hover {
+    background: var(--button-hover-bg, black);
+    color: var(--button-hover-flex, white);
+}
+
+/* solution, could be limegreen with lightblue */
+button.primary {
+    --button-primary-bg: var(--light-secondary);
+    --buttom-primary-text: var(--dark-bg);
+}
+button.primary:hover {
+    --button-hover-bg: var(--dark-secondary);
+    --button-hover-flex: var(--light-primary);
+}
+
+button.secondary {
+    --button-primary-bg: limegreen;
+    --buttom-primary-text: black;
+}
+button.secondary:hover {
+    --button-hover-bg: brown;
+    --button-hover-flex: lightblue;
+}
+
+/* Exercise 2: make code more readable, create a narrow and wide container */
+
+.main-container {
+    /* original */
+    width: min(100% - 2rem, 60rem);
+    margin: auto;
+
+    --max-width: 60rem;
+    --margin: 2rem;
+    width: min(calc(100% - var(--margin)), var(--max-width));
+}
+
+/* Ejercise 3: hsl and custom properties */ 
+/* https://www.youtube.com/watch?v=IHaT_rjC2gM */
+
+.card {
+
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem;
+    --clr-blue: 80 100% 60%;
+    background: hsl(var(--clr-blue) / .9);
+    z-index: 1;
+
+    /* option 1 */
+    --hue: 9;
+    --saturation: 100%;
+    --lightness: 30%;
+    --opacity: 0.7;
+    background: hsl(var(--hue) var(--saturation) var(--lightness) / var(--opacity));
+
+    /* option 2 */
+    background: hsl(var(--hue, 9) var(--saturation, 100%) var(--lightness, 30%) / var(--opacity, 0.7))
+}
